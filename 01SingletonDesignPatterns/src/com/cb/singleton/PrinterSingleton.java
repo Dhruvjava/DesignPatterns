@@ -10,9 +10,11 @@ public class PrinterSingleton {
     }
 
 //    Static factory method having singleton logic
-    public static PrinterSingleton getInstance(){
-        if (INSTANCE == null)
-            INSTANCE= new PrinterSingleton();
+    public static PrinterSingleton getInstance() throws InterruptedException {
+        if (INSTANCE == null) {
+            Thread.sleep(10000);
+            INSTANCE = new PrinterSingleton();
+        }
         return INSTANCE;
     }
 

@@ -2,7 +2,7 @@ package com.cb.singleton;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         PrinterSingleton p1 = PrinterSingleton.getInstance();
         PrinterSingleton p2 = PrinterSingleton.getInstance();
         System.out.println(p1.hashCode());
