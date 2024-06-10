@@ -13,8 +13,14 @@ public class S02PrinterSingletonSol {
 
     //    Static factory method having singleton logic
     public synchronized static S02PrinterSingletonSol getInstance(){
-        if (INSTANCE == null)
-            INSTANCE= new S02PrinterSingletonSol();
+        if (INSTANCE == null) {
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            INSTANCE = new S02PrinterSingletonSol();
+        }
         return INSTANCE;
     }
 
